@@ -20,6 +20,8 @@ public class SoulaimanApplication {
             System.out.println("**********************************************");
 
             System.out.println("adding something to dev branch");
+
+            System.out.println("testing work flow");
         } ;
     }
 
