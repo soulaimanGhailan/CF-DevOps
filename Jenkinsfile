@@ -23,7 +23,7 @@ pipeline {
             }
          stage('artifact') {
                     steps {
-                        archiveArtifacts artifacts: 'target/*.jar'
+                        archiveArtifacts artifacts: 'CF-DevOps/target/*.jar'
                     }
          }
 //         stage('build docker image') {
