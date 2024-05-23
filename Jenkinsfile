@@ -27,22 +27,22 @@ pipeline {
                     }
          }
 
-         stage('Tag and Push') {
-                     steps {
-                         // Ajouter un tag Git pour marquer la version stable
-                         dir('CF-DevOps') {
-                            script {
-                                 def gitTag = "v1.${BUILD_NUMBER}"
-                                 sh "git tag ${gitTag}"
-                                 sh "git push origin ${gitTag}"
-                            }
-
-
-                         }
-                     }
-
-
-                 }
+//          stage('Tag and Push') {
+//                      steps {
+//                          // Ajouter un tag Git pour marquer la version stable
+//                          dir('CF-DevOps') {
+//                             script {
+//                                  def gitTag = "v1.${BUILD_NUMBER}"
+//                                  sh "git tag ${gitTag}"
+//                                  sh "git push origin ${gitTag}"
+//                             }
+//
+//
+//                          }
+//                      }
+//
+//
+//                  }
 //         stage('build docker image') {
 //                             steps {
 //                                        script {
@@ -58,4 +58,11 @@ pipeline {
 
 
         }
+
+         post {
+                success {
+                    // Envoyer une notification Slack en cas de succès
+                    slackSend message: "build done"
+                }
+                }
     }
