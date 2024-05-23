@@ -18,6 +18,8 @@ public class SoulaimanApplication {
             System.out.println("**********************************************");
             System.out.println("bonjour et bon courage dans vote examen en devops");
             System.out.println("**********************************************");
+
+            System.out.println("adding something to dev branch");
         } ;
     }
 
