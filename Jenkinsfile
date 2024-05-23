@@ -32,12 +32,12 @@ pipeline {
             }
         }
     }
-    post {
-        always{
-        }
-        failure {
-        }
-        success {
-        }
-    }
+//     post {
+//         always{
+//         }
+//         failure {
+//         }
+//         success {
+//         }
+//     }
 }
