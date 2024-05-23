@@ -26,6 +26,23 @@ pipeline {
                         archiveArtifacts artifacts: 'CF-DevOps/target/*.jar'
                     }
          }
+
+         stage('Tag and Push') {
+                     steps {
+                         // Ajouter un tag Git pour marquer la version stable
+                         dir('CF-DevOps') {
+                            script {
+                                 def gitTag = "v1.${BUILD_NUMBER}"
+                                 sh "git tag ${gitTag}"
+                                 sh "git push origin ${gitTag}"
+                            }
+
+
+                         }
+                     }
+
+
+                 }
 //         stage('build docker image') {
 //                             steps {
 //                                        script {
