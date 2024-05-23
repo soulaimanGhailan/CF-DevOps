@@ -14,17 +14,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                        sh 'mvn clean test package'
+                        sh "mvn clean package"
                         sh "java -jar target/soulaiman-0.0.1-SNAPSHOT.jar"
                 }
             }
         }
     }
-//     post {
-//         always{
-//         }
-//         failure {
-//         }
-//         success {
-//         }
-//     }
