@@ -16,10 +16,9 @@ pipeline {
             steps {
                        dir('CF-DevOps') {
                                                // Run Maven commands
-                                               sh 'mvn clean test package'
-                                               sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
+                                               sh 'mvn clean package'
+                                               sh "java -jar target/soulaiman-0.0.1-SNAPSHOT.jar"
                        }
                 }
             }
-        }
     }
