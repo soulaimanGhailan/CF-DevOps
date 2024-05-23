@@ -15,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                         sh 'mvn clean test package'
-                        sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
+                        sh "java -jar target/soulaiman-0.0.1-SNAPSHOT.jar"
                 }
             }
         }
