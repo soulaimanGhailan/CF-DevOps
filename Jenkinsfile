@@ -14,18 +14,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Here, we can can run Maven commands
-                script {
-
-                    def currentDir = pwd()
-                    echo "Current directory: ${currentDir}"
-
-                    // Navigate to the directory containing the Maven project
-                        // Run Maven commands
                         sh 'mvn clean test package'
                         sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
-
-
                 }
             }
         }
