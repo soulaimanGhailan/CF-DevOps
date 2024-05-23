@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                       dir('CF-DevOpsq') {
+                       dir('CF-DevOps') {
                                                // Run Maven commands
                                                sh 'mvn clean test package'
                                                sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
