@@ -21,5 +21,24 @@ pipeline {
                        }
                 }
             }
+         stage('artifact') {
+                    steps {
+                        archiveArtifacts artifacts: 'target/*.jar'
+                    }
+         }
+//         stage('build docker image') {
+//                             steps {
+//                                        script {
+//                                             withCredentials([usernamePassword(credentialsId: 'docker-hub-pass', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+//                                             dir('CF-DevOps') {
+//                                              sh 'docker build -t soulaimandockerhub/cf-devops:latest .'
+//                                              sh 'echo $PASS | docker login -u $USER --password-stdin'
+//                                              sh 'echo push soulaimandockerhub/cf-devops:latest'
+//                                              }
+//                                         }
+//                             }
+//           }
+
+
         }
     }
